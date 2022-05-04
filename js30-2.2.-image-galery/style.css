@@ -1,0 +1,886 @@
+html {    
+    box-sizing: border-box;
+}
+    
+*, *::before, *::after {
+margin: 0;
+padding: 0;
+box-sizing: inherit;
+}
+
+body {
+    font-family: 'Comfortaa', cursive;
+    background-color: black;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 30px 30px 0 30px;
+    text-align: center;
+}
+
+.h1 {
+    font-size: 3em;
+    color: white;
+    margin-right: auto;
+    margin-left: 20px;
+    font-weight: 400;
+}
+
+.search-input {
+    width: 400px;
+    height: 50px;
+    padding: 5px;
+    border-radius: 50px;
+    outline: none;
+    font-size: 25px;
+    padding-left: 25px;
+    padding-right: 10px;
+}
+
+.btn {
+    width: 90px;
+    height: 50px;
+    color: #ff3c00;
+    background: white;
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+    border-radius: 20px;
+}
+    
+button {
+    cursor: pointer;
+    /*	border-radius: 4px;*/
+    font-family: 'Comfortaa', cursive;
+    height: 45px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+}
+
+button:hover {
+    background: #ff3c00;
+    color: white;
+}
+
+button:focus {
+    outline: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.result-stats {
+    color: gray;
+    padding-top: 20px;
+    font-size: 1.5em;
+    margin: 0 75px 0 auto;
+    text-align: end;
+}
+
+.search-results {
+    display: flex;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 25px;
+    max-width: 1300px;
+    flex-wrap: wrap;
+    margin: 0 auto 0 auto;
+}
+
+::placeholder {
+    padding-left: 20px;
+}
+
+.result-item {
+    width: 400px;
+    height: 250px;
+    padding: 5px;       
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.photographer-name {
+    padding: 7px;
+    font-size: 1.0em;
+    letter-spacing: 0.7px;
+}
+
+.photographer-name:hover {
+    text-decoration: underline;
+}
+
+.prev-btn {
+    margin-bottom: 20px;
+    background: #ff3c00;
+    width: 155px;
+    height: 45px;
+    border-radius: 15px;
+    color: white !important;
+    border: none;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.next-btn {
+    margin-bottom: 20px;
+    background: #ff3c00;
+    width: 155px;
+    height: 45px;
+    border-radius: 15px;
+    color: white !important;
+    border: none;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+
+.prev-btn:hover, .next-btn:hover {       
+    background: red;        
+}
+.paginator {
+    display: flex;
+    
+    justify-content: center;
+    height: 40px;
+}
+
+.next-btn {
+    margin-left: 10px;
+}
+
+.footer {
+    text-align: center;
+    font-size: 1.7em;       
+    padding: 10px;
+    bottom: 0;
+    width:100%;
+}
+.photo {            
+    width: 120px;
+    height: 80px;
+}
+.js-form {
+    display: flex;
+    align-items: center;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin: 100px auto;
+}
+
+.double-bounce1, .double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #333;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;  
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.underLine {
+    background-color: #ff3c00;
+    width: 100%;    
+    left:  0;
+    height: 7px;
+    margin-top: 25px;
+    border-radius: 40px;
+}
+
+.first_foto {
+    width: 100%;
+    max-width: 1240px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    margin: 0 auto 0 auto;
+    padding-bottom: 35px;
+}
+.foto1{
+    width: 400px;
+    height: 250px;
+    padding: 5px;       
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image:url(./assets/image/alireza-zarafshani-DE3JXMY950s-unsplash.jpg)
+}
+.foto2{
+    width: 400px;
+    height: 250px;
+    padding: 5px;      
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image:url(./assets/image/drew-dizzy-graham-cTKGZJTMJQU-unsplash.jpg)
+}
+.foto3{
+    width: 400px;
+    height: 250px;
+    padding: 5px;       
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image:url(./assets/image/eduardo-dorantes-UhE2lwGn-DQ-unsplash.jpg)
+}
+.foto4{
+    width: 400px;
+    height: 250px;
+    padding: 5px;    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image:url(./assets/image/logan-weaver-Qj2L55BMNOY-unsplash.jpg)
+}
+.foto5{
+    width: 400px;
+    height: 250px;
+    padding: 5px;       
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image:url(./assets/image/obi-onyeador-Ba6yMq9KY00-unsplash.jpg)
+}
+.foto6{
+    width: 400px;
+    height: 250px;
+    padding: 5px;     
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image:url(./assets/image/obi-onyeador-gUW8waI74AQ-unsplash.jpg)
+}
+.foto7{
+    width: 400px;
+    height: 250px;
+    padding: 5px;    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image:url(./assets/image/sebastian-hans-uTbWC3srFvk-unsplash.jpg)
+}
+.foto8{
+    width: 400px;
+    height: 250px;
+    padding: 5px;    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image:url(./assets/image/thom-holmes-5T_IJfZWAY0-unsplash.jpg)
+}
+.foto9{
+    width: 400px;
+    height: 250px;
+    padding: 5px;  
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image:url(./assets/image/thom-holmes-ZCaNF3UkqjU-unsplash.jpg)
+}
+.foto10{
+    width: 400px;
+    height: 250px;
+    padding: 5px;       
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image:url(./assets/image/tolga-ulkan-6ZiUw57iK2g-unsplash.jpg)
+}
+.foto11{
+    width: 400px;
+    height: 250px;
+    padding: 5px;   
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image:url(./assets/image/tolga-ulkan-QBFqmMyBcXw-unsplash.jpg)
+}
+.foto12{
+    width: 400px;
+    height: 250px;
+    padding: 5px;     
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image:url(./assets/image/zoltan-tasi-8wrBn1E7sAE-unsplash.jpg)
+}
+.foto13{
+    width: 400px;
+    height: 250px;
+    padding: 5px;        
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image:url(./assets/image/13.jpg)
+}
+.foto14{
+    width: 400px;
+    height: 250px;
+    padding: 5px;      
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image:url(./assets/image/14.jpg)
+}
+.foto15{
+    width: 400px;
+    height: 250px;
+    padding: 5px;     
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image:url(./assets/image/15.jpg)
+}
+.footer {
+    height: 190px;
+    max-width: 1440px;
+    margin: 0 auto 0 auto ;
+    background-color: black !important;
+    position: inherit;
+    width: 100%;
+}
+
+.footer_container {
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+.footer_link {
+    cursor: pointer;        
+}
+
+.footer_link:hover {
+    filter: brightness(0) saturate(100%) invert(33%) sepia(73%) saturate(3544%) hue-rotate(358deg) brightness(97%) contrast(113%);
+    color: #ff3c00
+}
+.github {
+    color: white;
+    text-decoration: none;
+    font-family: 'Comfortaa', cursive;
+    font-size: 1.2em;
+}
+
+.github:hover {        
+    color: #ff3c00; 
+}
+.year {
+    color: white;
+    font-family: 'Comfortaa', cursive;
+    font-size: 1.2em;
+}
+
+.notFound {
+    background-image: url(./assets/image/404.JPG);
+    width: 1440px;
+    height: 1000px;
+    padding: 5px;
+    border-radius: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-left: -95px;
+}
+
+.calendar {
+    text-decoration: none;
+    color: white;
+    font-family: 'Comfortaa', cursive;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+.calendar:hover {
+    color: #ff3c00; 
+}
+
+
+@media (min-width: 992px) and (max-width: 1340px) { 
+    .notFound {
+        width: 940px;
+        height: 626px;
+        margin-left: -75px;
+    }
+    .container {
+        width: 100%;           
+    } 
+    .search-results {           
+        max-width: 870px;           
+    }
+    .search-input {
+        width: 60%;          
+    }  
+    .js-form {
+        justify-content: end;
+    }
+
+    .first_foto {
+        width: 100%;
+        max-width: 820px;
+    }
+}
+
+@media (min-width: 768.02px) and (max-width: 991px) { 
+
+    .notFound {
+        width: 750px;
+        height: 500px;
+        margin-left: -54px;
+    }
+    .container {
+        width: 100%;
+        
+    } 
+    .search-results {           
+        max-width: 670px;           
+    }
+    .search-input {
+        width: 300px;           
+    }   
+    .js-form {
+        justify-content: end;
+    }
+    .h1 {
+        font-size: 2.5em;
+        margin-right: 30px;
+    }    
+    .result-item {
+        width: 300px;
+    }
+    .foto1 {
+        width: 330px;
+        height: 220px; 
+    }
+    .foto2 {
+        width: 330px;
+        height: 220px; 
+    }
+    .foto3 {
+        width: 330px;
+        height: 220px; 
+    }
+    .foto4 {
+        width: 330px;
+        height: 220px; 
+    }
+    .foto5 {
+        width: 330px;
+        height: 220px; 
+    }
+    .foto6 {
+        width: 330px;
+        height: 220px; 
+    }
+    .foto7 {
+        width: 330px;
+        height: 220px; 
+    }
+    .foto8 {
+        width: 330px;
+        height: 220px; 
+    }
+    .foto9 {
+        width: 330px;
+        height: 220px; 
+    }
+    .foto10 {
+        width: 330px;
+        height: 220px; 
+    }
+    .foto11 {
+        width: 330px;
+        height: 220px; 
+    }
+    .foto12 {
+        width: 330px;
+        height: 220px; 
+    }
+    .foto13 {
+        width: 330px;
+        height: 220px; 
+    }
+    .foto14 {
+        width: 330px;
+        height: 220px; 
+    }
+    .foto15 {
+        width: 330px;
+        height: 220px; 
+    }
+    .first_foto {
+        max-width: 680px;         
+    }
+}
+
+@media (min-width: 480px) and (max-width: 768px) { 
+
+    .notFound {
+        width: 470px;
+        height: 315px;
+        margin-left: -46px;
+    }
+    .container {
+        width: 100%;
+        
+    } 
+    .search-results {           
+        max-width: 870px;
+        
+    }
+    .search-input {
+        width: 60%;   
+        height: 35px;    
+        font-size: 16px;  
+    }   
+    .js-form {
+        justify-content: end;
+    }
+    .h1 {
+        font-size: 1.4em;
+        margin-left: 5px;
+    }    
+    
+    .result-item {
+        max-width: 265px;                 
+    }
+
+    .search-results {
+        max-width: 1300px;
+        width: 600px;
+    }
+
+    .photographer-name {
+        font-size: 0.5em;
+    }
+
+    .btn {
+        width: 60px;
+        height: 35px;           
+        font-size: 0.5em;         
+    }
+
+    .photo {
+        width: 80px;
+        height: 50px;
+    }
+
+    .prev-btn {
+        width: 110px;
+        height: 35px;          
+        font-size: 0.8em;           
+    }
+    .next-btn {
+        width: 110px;
+        height: 35px;          
+        font-size: 0.8em;           
+    }
+
+    .logo_footer {
+        width: 100px;
+    }
+
+    .github {
+        font-size: 0.8em;
+    }
+
+    .year {
+        font-size: 0.8em;
+    }
+    .result-stats {
+        font-size: 1.2em;
+        
+    }
+    .first_foto { 
+        max-width: 420px;
+    }
+
+    .foto1 {
+        width: 420px;
+        height: 250px;     
+    }
+    .foto2 {
+        width: 420px;
+        height: 250px;     
+    }
+    .foto3 {
+        width: 420px;
+        height: 250px;     
+    }
+    .foto4 {
+        width: 420px;
+        height: 250px;     
+    }
+    .foto5 {
+        width: 420px;
+        height: 250px;     
+    }
+    .foto6 {
+        width: 420px;
+        height: 250px;     
+    }
+    .foto7 {
+        width: 420px;
+        height: 250px;     
+    }
+    .foto8 {
+        width: 420px;
+        height: 250px;     
+    }
+    .foto9 {
+        width: 420px;
+        height: 250px;     
+    }
+    .foto10 {
+        width: 420px;
+        height: 250px;     
+    }
+    .foto11 {
+        width: 420px;
+        height: 250px;     
+    }
+    .foto12 {
+        width: 420px;
+        height: 250px;     
+    }
+    .foto13 {
+        width: 420px;
+        height: 250px;     
+    }
+    .foto14 {
+        width: 420px;
+        height: 250px;     
+    }
+    .foto15 {
+        width: 420px;
+        height: 250px;     
+    }
+}
+
+@media (min-width: 550.1px) and (max-width: 660px) {         
+    .result-item {
+        max-width: 215px;                
+    }
+    .search-results {          
+        width: 500px;
+    }      
+}
+
+
+@media  (min-width: 511px) and (max-width: 550px) {         
+    .result-item {
+        max-width: 215px;               
+    }
+
+    .search-results {          
+        width: 450px;
+        padding-left: 0;
+        padding-right: 0;
+    }      
+}
+
+@media  (min-width: 480px) and (max-width: 510px) {         
+    .result-item {
+        max-width: 180px;                       
+    }
+
+    .search-results {          
+        width: 383px;
+        padding-left: 0;
+        padding-right: 0;
+    }      
+}
+
+@media  (max-width: 479.98px) { 
+    .notFound {           
+        width: 300px;
+        height: 190px;       
+        margin-left: -28px;
+    }
+
+    .container {
+        width: 100%;           
+    } 
+    .search-results {                           
+        width: 350px;
+        padding-left: 0;
+        padding-right: 0;           
+    }
+    .search-input {
+        width: 60%;   
+        height: 35px;    
+        font-size: 16px;  
+    }   
+    .js-form {
+        justify-content: end;
+    }
+    .h1 {
+        font-size: 1.4em;
+        margin-left: 5px;
+    }    
+    
+    .result-item {                      
+        width: 350px;
+    }
+
+    .photographer-name {
+        font-size: 0.5em;
+    }
+
+    .btn {
+        width: 60px;
+        height: 35px;           
+        font-size: 0.5em;         
+    }
+
+    .photo {
+        width: 80px;
+        height: 50px;
+    }
+
+    .prev-btn {
+        width: 110px;
+        height: 35px;          
+        font-size: 0.8em;           
+    }
+    .next-btn {
+        width: 110px;
+        height: 35px;          
+        font-size: 0.8em;           
+    }
+
+    .logo_footer {
+        width: 100px;
+    }
+
+    .github {
+        font-size: 0.8em;
+    }
+
+    .year {
+        font-size: 0.8em;
+    }
+
+    .result-stats {
+        font-size: 1.0em;
+        margin: 0 0 0 auto;
+        text-align: end;
+    }
+
+    .title {
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .js-form {
+        justify-content: end;
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .first_foto { 
+        max-width: 300px;
+    }
+
+    .foto1 {
+        width: 300px;
+        height: 250px;     
+    }
+    .foto2 {
+        width: 300px;
+        height: 250px;     
+    }
+    .foto3 {
+        width: 300px;
+        height: 250px;     
+    }
+    .foto4 {
+        width: 300px;
+        height: 250px;     
+    }
+    .foto5 {
+        width: 300px;
+        height: 250px;     
+    }
+    .foto6 {
+        width: 300px;
+        height: 250px;     
+    }
+    .foto7 {
+        width: 300px;
+        height: 250px;     
+    }
+    .foto8 {
+        width: 300px;
+        height: 250px;     
+    }
+    .foto9 {
+        width: 300px;
+        height: 250px;     
+    }
+    .foto10 {
+        width: 300px;
+        height: 250px;     
+    }
+    .foto11 {
+        width: 300px;
+        height: 250px;     
+    }
+    .foto12 {
+        width: 300px;
+        height: 250px;     
+    }
+    .foto13 {
+        width: 300px;
+        height: 250px;     
+    }
+    .foto14 {
+        width: 300px;
+        height: 250px;     
+    }
+    .foto15 {
+        width: 300px;
+        height: 250px;     
+    }
+}
+
+@media   (max-width: 420px) {         
+    .result-item {
+        max-width: 250px;                
+    }
+
+    .search-results {          
+        width: 250px;            
+    }      
+}

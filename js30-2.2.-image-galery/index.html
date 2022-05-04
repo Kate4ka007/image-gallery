@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image-gallery</title>
+    <link rel="stylesheet" type="text/css" href="style.css">   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="./assets/image/favicon.ico">
+
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="title">
+            <div class="photoap"><img src="./assets/image/camera.png" class = "photo" alt="photo"> </div>
+            <h1 class="h1">Unsplash API</h1>
+            <form class="js-form">
+                <input type="search" class="search-input js-search-input" placeholder="Search photos..." autofocus>
+                <button type="submit" class="btn">Search</button>
+            </form>
+			
+            </div>
+		    <div class="underLine"></div>
+            <div class="result-stats js-result-stats"></div>
+            <div class="search-results js-search-results"></div>
+            <div class="pagination">
+                <button class="hidden prev-btn js-prev"><a href="#top" style="text-decoration: none; color: white;">Previous page</a></button>
+                <button class="hidden next-btn js-next"><a href="#top" style="text-decoration: none; color: white;">Next page</a></button>
+            </div>
+            </div>
+
+        <div class="spinner js-spinner hidden">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+		<div class="first_foto">
+			<div class="foto1"></div>
+			<div class="foto2"></div>
+			<div class="foto3"></div>
+			<div class="foto4"></div>
+			<div class="foto5"></div>
+			<div class="foto6"></div>
+			<div class="foto7"></div>
+			<div class="foto8"></div>
+			<div class="foto9"></div>
+			<div class="foto10"></div>
+			<div class="foto11"></div>
+			<div class="foto12"></div>
+            <div class="foto13"></div>
+            <div class="foto14"></div>
+            <div class="foto15"></div>
+		</div>
+    </main>
+    <footer class="footer">
+		<div class="footer_container">
+            <a href="https://github.com/Kate4ka007" target = "_blank" class="github">github</a>
+			<a href="https://rs.school/js-stage0/" target = "_blank" class="footer_link"><img src="./assets/image/rs_school_js.png" alt="logo" width="200" class="logo_footer"></a>
+            <div class="year"><a href="https://www.timeanddate.com/calendar/" class = "calendar" target = "_blank">2022</a></div>
+		</div>        
+    </footer>
+	<script src="./index.js"></script>  
+</body>
+</html>
